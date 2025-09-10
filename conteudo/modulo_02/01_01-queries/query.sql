@@ -1,15 +1,30 @@
 -- 1) Criar um schema para o curso
-CREATE SCHEMA IF NOT EXISTS loja AUTHORIZATION CURRENT_USER;
+CREATE SCHEMA IF NOT EXISTS loja;
+
+SHOW SCHEMAS;
+
+USE loja;
+
+SELECT DATABASE();
 
 -- 2) Criar a tabela clientes
 -- Obs: usamos "GENERATED ALWAYS AS IDENTITY" (PostgreSQL 10+)
 CREATE TABLE IF NOT EXISTS loja.clientes (
-  id              BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  id              BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   nome            VARCHAR(120)        NOT NULL,
   email           VARCHAR(120)        NOT NULL UNIQUE,
   cidade          VARCHAR(80),
-  criado_em       TIMESTAMPTZ         NOT NULL DEFAULT NOW()
+  criado_em       TIMESTAMP           NOT NULL DEFAULT NOW()
 );
+
+-- Conferindo estrutura da tabela
+
+`describe loja.clientes`
+
+
+-- Alterando estrutura
+ALTER TABLE `loja`.`clientes` 
+ADD COLUMN `empresa` VARCHAR(45) NULL AFTER `criado_em`;
 
 -- Conferir a estrutura criada:
 SELECT column_name, data_type, is_nullable, column_default

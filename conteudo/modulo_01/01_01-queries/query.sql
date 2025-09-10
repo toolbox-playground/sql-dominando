@@ -1,5 +1,5 @@
 -- Qual banco estou usando?
-SELECT current_database();
+SELECT DATABASE();
 
 -- Qual usuário estou usando?
 SELECT current_user;
