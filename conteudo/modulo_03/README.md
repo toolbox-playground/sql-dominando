@@ -1,10 +1,10 @@
 
-## 🏗️ Criação de Schemas e Tabelas
+## 🏗️ Alterando estruturas (ALTER TABLE)
 
-Criação de schemas (CREATE SCHEMA)
+Adicionar novas colunas (ALTER TABLE ... ADD)
 
-Criação de tabelas com diferentes tipos de dados: INT, VARCHAR, DATE, DECIMAL
+Modificar tipo de dados de uma coluna (ALTER TABLE ... ALTER COLUMN)
 
-Definição de chaves primárias (PRIMARY KEY)
+Remover colunas (ALTER TABLE ... DROP COLUMN)
 
-Restrições básicas: NOT NULL, DEFAULT
+Alteração de chaves primárias e restrições
